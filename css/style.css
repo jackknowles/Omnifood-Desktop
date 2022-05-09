@@ -4,11 +4,16 @@
 - FONT-SIZE (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
- - FONT-WEIGHTS
-Default: 500
+---FONT-WEIGHTS
+ - Default: 400
+ - Medium: 500
+ - semi-bold: 600
+ - Bold: 700
 
  - LINE-HEIGHTS
 Default: 1
+small: 1.05 (h1)
+paragraph default: 1.6
 
 - SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
@@ -25,6 +30,7 @@ Default: 1
 --- 05 SHADOWS
 
 --- 06 BORDER RADIUS
+- 9px buttons
 
 --- 07 WHITESPACE
 
@@ -48,36 +54,27 @@ body {
   font-weight: 400;
   color: #555;
 }
+/* ************************* */
+/* GENERAL REUSABLE COMPONENTS */
+/* ************************* */
 
-/* 02 HERO STYLING //////////////////////// */
-
-.section-hero {
-  background-color: #fdf2e9;
-  padding: 9.6rem 0;
+.margin-right-sm {
+  margin-right: 1.6rem !important;
 }
 
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 0 auto;
-  max-width: 130rem;
-  align-items: center;
-  gap: 9.6rem;
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  color: #333;
 }
 
 .heading-primary {
   font-size: 5.2rem;
-  font-weight: 700;
+
   line-height: 1.05;
-  color: #333;
+
   letter-spacing: -0.5px;
   margin-bottom: 3.2rem;
-}
-
-.hero-description {
-  font-size: 2.2rem;
-  margin-bottom: 4.8rem;
-  line-height: 1.6;
 }
 
 .btn:link,
@@ -114,12 +111,113 @@ body {
   background-color: #fdf2e9;
 }
 
-.hero-img {
-  width: 100%;
+/* ************************* */
+/* REUSABLE GRIDS AND CONTAINERS */
+/* ************************* */
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
 }
 
-.margin-right-sm {
-  margin-right: 1.6rem;
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+/* ************************** */
+/* 02 HEADER */
+/* ************************** */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  background-color: #fdf2e9;
+}
+
+.logo {
+  height: 2.2rem;
+}
+
+/* ************************** */
+/* 02 HEADER -- NAVIGATION */
+/* ************************** */
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3.2rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 1.2rem 2.4rem;
+}
+
+.main-nav-link.main-nav-link--cta:link,
+.main-nav-link.main-nav-link--cta:visited {
+  background-color: #e67e22;
+  color: #fff;
+  border-radius: 9px;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+.main-nav-link.main-nav-link--cta:hover,
+.main-nav-link.main-nav-link--cta:active {
+  background-color: #cf711f;
+}
+
+/* ************************** */
+/* 03 HERO SECTION */
+/* ************************** */
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  max-width: 130rem;
+  align-items: center;
+}
+
+.hero-description {
+  font-size: 2.2rem;
+  margin-bottom: 4.8rem;
+  line-height: 1.6;
+}
+
+.hero-img {
+  width: 100%;
 }
 
 .delivered-meals {
@@ -152,4 +250,12 @@ body {
 
 .delivered-text span {
   color: #cf711f;
+}
+
+/* ************************** */
+/* 04 HOW IT WORKS SECTION */
+/* ************************** */
+
+.step-img {
+  width: 50%;
 }
