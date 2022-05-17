@@ -115,14 +115,19 @@ Social profiles: instagram, facebook, twitter [links to them not available yet]
 
 ### Additional links [links not available yet]
 
+---- USER INFO
 Create account
 Sign in
 iOS app
 Android app
+
+---- ABOUT INFO
 About Omnifood
 For Business
 Cooking partners
 Careers
+
+---- RESOURCES
 Recipe directory
 Help center
 Privacy & terms

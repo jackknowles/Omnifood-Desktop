@@ -34,6 +34,8 @@ paragraph default: 1.6
 
 --- 05 SHADOWS
 
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075)
+
 --- 06 BORDER RADIUS
 - 9px buttons
 - 11px cards
@@ -46,6 +48,11 @@ paragraph default: 1.6
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(207, 113, 31, 0.5);
 }
 
 html {
@@ -119,6 +126,7 @@ strong {
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -128,6 +136,11 @@ strong {
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
   transition: all 0.3s;
+
+  /* for real buttons not links */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .btn--full:link,
@@ -153,6 +166,18 @@ strong {
   background-color: #fdf2e9;
 }
 
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  color: #555;
+  background-color: #fff;
+}
+
 .link:link,
 .link:visited {
   color: #e67e22;
@@ -169,6 +194,26 @@ strong {
   border-bottom: 1px solid currentColor;
 }
 
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
 /* ************************* */
 /* GRIDS AND CONTAINERS */
 /* ************************* */
@@ -177,6 +222,12 @@ strong {
   display: grid;
   column-gap: 4.8rem;
   row-gap: 9.6rem;
+}
+
+/* below allows a margin to appear when multiple grids are in one section but if it's the last, no margin-bottom will be there, so it won't mess up section spacing */
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
@@ -189,6 +240,14 @@ strong {
 
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--2-lrg-3-sml {
+  grid-template-columns: repeat(2, 1.5fr) repeat(3, 1fr);
 }
 
 .grid--center-v {
