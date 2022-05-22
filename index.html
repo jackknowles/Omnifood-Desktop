@@ -624,7 +624,7 @@
                 first meal is on us!
               </p>
 
-              <form class="cta-form" action="#">
+              <form class="cta-form" name="omnifood-form" netlify>
                 <div>
                   <label for="full-name">Full name</label>
                   <input
@@ -632,6 +632,7 @@
                     id="full-name"
                     type="text"
                     placeholder="Joe Bloggs"
+                    name="full-name"
                   />
                 </div>
 
@@ -642,12 +643,13 @@
                     id="email"
                     type="email"
                     placeholder="joebloggs@email.com"
+                    name="email"
                   />
                 </div>
 
                 <div>
                   <label for="select-where">Where did you hear about us?</label>
-                  <select required id="select-where">
+                  <select required id="select-where" name="select-where">
                     <option value="">choose one option</option>
                     <option value="facebook">Facebook ad</option>
                     <option value="friends">Friends and family</option>
