@@ -1,0 +1,389 @@
+/* for media queries the altered rem cannot be used - instead 1 rem i still 16px, because 1em is 16px. Use em not rem though for media queries.*/
+
+/* reducing the width of hero for smaller laptop screens at 1350px (= 84.475em) */
+@media (max-width: 84.4em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 3.2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item:last-child,
+  .gallery-item:nth-last-child(2),
+  .gallery-item:nth-last-child(3),
+  .gallery-item:nth-last-child(4) {
+    display: none;
+  }
+}
+
+/* Breakpoint for tablet in lanscape and chosen as design elements (gaps, fonts) now seem too big - set for 1200px in em */
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+  .main-nav-list {
+    gap: 1.6rem;
+  }
+
+  .hero {
+    column-gap: 4.8rem;
+  }
+}
+
+/* Below is for mid-larger tablet style devices in portrait set at 980px (61.25em) where h1 spreads into 4 lines*/
+
+@media (max-width: 61.3em) {
+  html {
+    font-size: 50%;
+  }
+
+  .main-nav-list {
+    gap: 1.2rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-image-box {
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 6.2rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .gallery-item:last-child,
+  .gallery-item:nth-last-child(2),
+  .gallery-item:nth-last-child(3),
+  .gallery-item:nth-last-child(4) {
+    display: block;
+  }
+
+  .pricing-plan {
+    width: 90%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.6rem;
+  }
+
+  /* mobile navigation starts here */
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* if we use - display: none - no animations will work */
+
+    /* So step 1 is hide element visually */
+    opacity: 0;
+
+    /* Move it off to the side */
+
+    transform: translateX(100%);
+
+    /* Then step 2 is to make it unaccessible from mouse and keyboard (ie via tab key)*/
+    pointer-events: none;
+
+    /* Then hide from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+}
+
+/* at approx 700pc for small tablets/large mobiles */
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .logos {
+    flex-wrap: wrap;
+    gap: 2.4rem;
+  }
+
+  .diets {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan--starter,
+  .pricing-plan--complete {
+    justify-self: center;
+    padding: 4.6rem;
+    grid-column: 1 / -1;
+    width: 75%;
+  }
+
+  .pricing-plan--complete {
+    grid-row: 1;
+  }
+
+  .cta-text-box {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .grid--2-lrg-3-sml {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 2.8rem;
+    row-gap: 9.6rem;
+  }
+
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  .nav-col {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .footer-nav {
+    gap: 1.8rem;
+  }
+
+  .copyright {
+    margin-top: 2.8rem;
+    line-height: 2;
+  }
+}
+
+/* media query at below approx 550px for mobile devices */
+@media (max-width: 34em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  .grid--2-lrg-3-sml,
+  .grid--3-cols,
+  .grid--2-cols,
+  .grid--4-cols,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .hero-text-box .btn,
+  .hero-text-box .btn:link,
+  .hero-text-box .btn:visited {
+    width: 70%;
+    margin: 1rem 0 !important;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .hero-img {
+    display: none;
+  }
+
+  .nav-col--accounts {
+    grid-row: 1 / 2;
+  }
+  .nav-col--company {
+    grid-row: 2 / 3;
+  }
+
+  .nav-col--resources {
+    grid-row: 3 / 4;
+  }
+
+  .step-description {
+    font-size: 2rem;
+  }
+
+  .step-text-box.step-02 {
+    grid-row-start: 3;
+  }
+
+  .step-img-box {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 85%;
+  }
+
+  .footer {
+    padding-top: 4.8rem;
+  }
+}
+
+/* FLEXBOX GAP FIX FOR SAFARI OLDER BROWSERS - MUST BE USED WITH THE JS CODE FOR GAP */
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
